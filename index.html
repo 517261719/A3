@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>CODE1230</title>
+		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="js/jquery.min.js"></script>
+		 <!-- Custom Theme files -->
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+   		 <!-- Custom Theme files -->
+   		 <!---- start-smoth-scrolling---->
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+		 <!---- start-smoth-scrolling---->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		</script>
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+		<!---//webfonts--->
+		<!----start-top-nav-script---->
+		<!----//End-top-nav-script---->
+	</head>
+	<body>
+		<!----- start-header---->
+			<div id="home" class="header">
+					<div class="top-header">
+						<div class="container">
+						<div class="logo">
+							<a href="#">CODE1230</a>
+						</div>
+						<!----start-top-nav---->
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			</div>
+			<!----- //End-header---->
+			<!----banner---->
+			<div class="banner text-center">
+				<div class="container">
+					<div class="banner-info">
+						<h1><span>Data </span> Driven Design </h1>
+						<p>Haotong Bu z5158047</p>
+						<label class="page-scroll"><a class="big-btn scroll" href="#work1"><span> </span></a></label>
+					</div>
+				</div>
+			</div>
+			<!--//banner---->
+			<!---work--->
+			<div id="work" class="work">
+				<div id="work1" class="container">
+					<div class="head-one text-center">
+						<h2>Ideas</h2>
+						<span> </span>
+						<p>Education level & Income & Latte Line</p>
+					</div>
+					<!---works--->
+					<!---images-hover-effects--->
+					<!---images-hover-effects--->
+					<div class="works">
+							<div id="whatever">
+								<div class="col-md-6 work-grid">
+								    <div class="item">
+								        <img  src="images/w11.jpg" title="name" />
+								            <h2>Education level & Income</h2>
+								            <p>From the analysis that I did previously, it clearly shows the relationship between education level with income. Where people have a higher level of education, people also make more money.   I got this data from the G46 and G17 2016 census results.   </p>
+								        </div>
+								    </div>  
+							    </div>  
+							    <div class="col-md-6 work-grid">
+								    <div class="item">
+								        <img  src="images/w22.jpg" title="name" />
+								            <h2>Latte Line</h2>
+								            <p>New South Wales is largely divided by the latte line which affects many issues. In the southwestern part of New South Wales, there are less people with all levels of education and therefore they make less money. On the other hand the people living in the north-eastern  part of New South Wales  more people graduated and they usually make more money.</p>
+								        </div>
+								    </div>  
+							    </div>    
+							    <div class="col-md-6 work-grid">
+								    <div class="item">
+								        <img  src="images/w33.jpg" title="name" />
+								            <h2>Solution</h2>
+								            <p>Therefore, my solution is to establish schools in the areas of New South Wales which have the lowest education. By doing this it will provide similar education for all residents. This should help to reduce income inequality. </p>
+								        </div>
+								    </div>  
+							    </div>
+							    <div class="col-md-2 work-grid">
+								    <div class="item">
+								        <img  src="images/w121.jpg" title="name" />  
+								        </div>
+								    </div>  
+							    </div>  
+							    <div class="col-md-4 work-grid">
+								    <div class="item">
+								        <img  src="images/w46.jpg" title="name" />
+								            <h2>One site</h2>
+								            <p>To achieve this, I plan to combine all the different levels of education together into one site. This will reduce travel time for people studying. The community of this building will encourage students to study all levels of education because they grow up in the one school. </p>
+								        </div>
+								    </div>  
+							    </div>     
+							    <div class="clearfix"> </div>               
+							</div>
+					</div>
+					 <div class="clearfix"> </div>   
+					</div>
+				</div>
+					<!---//works--->
+					<!---team--->
+					<div id="team" class="team">
+						<div class="container">
+							<div class="head-one text-center team-head">
+								<h2>Mapping</h2>
+								<p>FOR SCHOOL</p>
+							</div>	
+<div id='map' style='width: 100%; height: 600px'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYnJlYWtqayIsImEiOiJjam1yZHRwenAwM2s2M2tvNXR6cm9ud24xIn0.MG_E3cZXGMSm6j8mXj_44w';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/breakjk/cjnst00kd37vr2srvwm29o5u9', // stylesheet location
+    center: [148.732, -34.417], // starting position [lng, lat]
+    pitch: 45,
+    bearing: -17.6,
+    zoom: 13.80 // starting zoom
+});
+map.on('load', function() {
+
+map.addLayer({
+    "id": "data",
+    "type": "fill-extrusion",
+    "source": {
+        'type': 'geojson',
+        'data': './12.geojson'
+    },
+    'layout': {
+        'visibility': 'visible'
+        },
+    'paint': {
+            'fill-extrusion-color' : {
+                'property': 'colour',
+                'type': 'identity'
+            },
+            'fill-extrusion-height' : {
+                'type': 'identity',
+                'property': 'height'
+            },
+            'fill-extrusion-base' : {
+                'type': 'identity',
+                'property': 'base_height'
+            },
+             'fill-extrusion-opacity': 1
+        }
+
+});
+});
+</script>
+							<!----team-members---->
+									<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<!---//footer--->
+				</div>
+			</div>
+
+</body>
+</html>
